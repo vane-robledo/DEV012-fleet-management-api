@@ -8,15 +8,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/taxis")
-public class TaxiController {
+@RequestMapping("/api")
+public class Controller {
     @Autowired
     private TaxiService taxiService;
+    @Autowired
+    private TrajectoriesService trajectoriesService;
 
-    @GetMapping
+    @GetMapping("/taxis")
     public ResponseEntity<List<Taxis>> getAllTaxis() {
         List<Taxis> taxis = taxiService.getAllTaxis();
         return new ResponseEntity<>(taxis, HttpStatus.OK);
+    }
+    @GetMapping("/trajectories")
+    public ResponseEntity<List<Trajectories>> getAllTrajectories() {
+        List<Trajectories> trajectories = trajectoriesService.getAllTaxis();
+        return new ResponseEntity<>(trajectories, HttpStatus.OK);
     }
 }
 
