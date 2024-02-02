@@ -1,5 +1,7 @@
 package com.fleetmanagment.api;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -11,7 +13,8 @@ public class TrajectoriesService {
     private TrajectoriesRepository trajectoriesRepository;
 
 
-    public List<Trajectories> getAllTaxis() {
-        return trajectoriesRepository.findAll();
+    public List<Trajectories> getAllTrajectories(Pageable pageable) {
+        Page<Trajectories> page = trajectoriesRepository.findAll(pageable);
+        return page.getContent();
     }
 }
