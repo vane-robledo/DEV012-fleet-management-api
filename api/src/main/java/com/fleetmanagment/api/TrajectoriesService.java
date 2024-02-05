@@ -1,5 +1,4 @@
 package com.fleetmanagment.api;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -13,8 +12,8 @@ public class TrajectoriesService {
     private TrajectoriesRepository trajectoriesRepository;
 
 
-    public List<Trajectories> getAllTrajectories(Pageable pageable) {
-        Page<Trajectories> page = trajectoriesRepository.findAll(pageable);
-        return page.getContent();
+    public List<Trajectories> getTrajectoriesByTaxiId(int taxiId, Pageable pageable) {
+        return trajectoriesRepository.findByTaxiId(taxiId,pageable);
     }
 }
+

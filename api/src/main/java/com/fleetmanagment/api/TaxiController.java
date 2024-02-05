@@ -11,11 +11,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class Controller {
+public class TaxiController {
     @Autowired
     private TaxiService taxiService;
-    @Autowired
-    private TrajectoriesService trajectoriesService;
 
     @GetMapping("/taxis")
     public List<Taxis> getAllTaxis(@PageableDefault(page = 0, size = 20) Pageable pageable) {
@@ -23,10 +21,6 @@ public class Controller {
     }
 
 
-    @GetMapping("/trajectories")
-    public List<Trajectories> getAllTrajectories(@PageableDefault(page = 0, size = 20) Pageable pageable) {
-     return trajectoriesService.getAllTrajectories(pageable);
-    }
 }
 
 

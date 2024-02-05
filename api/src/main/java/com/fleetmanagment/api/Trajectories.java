@@ -9,7 +9,7 @@ public class Trajectories {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int taxi_id;
+    private int taxiId;
     private Timestamp date;
     private double latitude;
     private double longitude;
@@ -34,16 +34,16 @@ public class Trajectories {
         return latitude;
     }
 
-    public void setTaxi_id(int taxi_id) {
-        this.taxi_id = taxi_id;
+    public void setTaxiId(int taxiId) {
+        this.taxiId = taxiId;
     }
 
     public void setDate(Timestamp date) {
         this.date = date;
     }
 
-    public int getTaxi_id() {
-        return taxi_id;
+    public int getTaxiId() {
+        return taxiId;
     }
 
     public int getId() {
