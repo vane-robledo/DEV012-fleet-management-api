@@ -4,6 +4,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -12,8 +13,8 @@ public class TrajectoriesService {
     private TrajectoriesRepository trajectoriesRepository;
 
 
-    public List<Trajectories> getTrajectoriesByTaxiId(int taxiId, Pageable pageable) {
-        return trajectoriesRepository.findByTaxiId(taxiId,pageable);
+    public List<Trajectories> getTrajectoriesByTaxiId(int taxiId, String date, Pageable pageable) {
+        return trajectoriesRepository.findByTaxiId(taxiId, date, pageable);
     }
 }
 

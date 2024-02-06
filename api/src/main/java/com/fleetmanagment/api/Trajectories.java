@@ -1,13 +1,13 @@
 package com.fleetmanagment.api;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.sql.Date;
 import java.sql.Timestamp;
+
+
 @Entity
 public class Trajectories {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int taxiId;
     private Timestamp date;
@@ -34,7 +34,7 @@ public class Trajectories {
         return latitude;
     }
 
-    public void setTaxiId(int taxiId) {
+    public void setTaxi_id(int taxiId) {
         this.taxiId = taxiId;
     }
 
