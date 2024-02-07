@@ -23,7 +23,6 @@ public class TrajectoriesController {
             @RequestParam  String date,
             @PageableDefault(page = 0, size = 20) Pageable pageable
     ) {
-        System.out.println(date);
         return trajectoriesService.getTrajectoriesByTaxiId(taxiId,date, pageable);
     }
 }
