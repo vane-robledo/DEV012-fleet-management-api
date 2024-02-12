@@ -1,12 +1,10 @@
 package com.fleetmanagment.api;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.Objects;
+
 
 @RestController
 @RequestMapping("/api")
@@ -19,8 +17,7 @@ public class LastLocationController {
 
 
     @GetMapping("/lastLocation")
-    public List<Trajectories> getLastLocation(
-            @RequestParam int taxiId){
-        return lastLocationService.getLastLocation(taxiId);
+    public List<Object[]> getLastLocation(Pageable pageable){
+        return lastLocationService.getLastLocation(pageable);
     }
 }

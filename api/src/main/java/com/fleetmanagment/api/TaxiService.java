@@ -16,9 +16,8 @@ public class TaxiService {
         this.taxiRepository = taxiRepository;
     }
 
-    public List<Taxis> getAllTaxis(Pageable pageable) {
-        Page<Taxis> page = taxiRepository.findAll(pageable);
-        return page.getContent();
+    public Page<Taxis> getAllTaxis(Pageable pageable) {
+        return  taxiRepository.findAll(pageable);
     }
 }
 

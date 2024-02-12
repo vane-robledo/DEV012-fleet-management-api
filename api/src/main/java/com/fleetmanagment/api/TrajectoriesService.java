@@ -13,7 +13,7 @@ public class TrajectoriesService {
     private TrajectoriesRepository trajectoriesRepository;
 
 
-    public List<Trajectories> getTrajectoriesByTaxiId(int taxiId, String date, Pageable pageable) {
+    public Page<Trajectories> getTrajectoriesByTaxiId(int taxiId, String date, Pageable pageable) {
         return trajectoriesRepository.findByTaxiId(taxiId, date, pageable);
     }
 }

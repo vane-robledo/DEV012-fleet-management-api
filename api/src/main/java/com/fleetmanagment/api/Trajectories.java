@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 public class Trajectories {
     @Id
     private int id;
-    private int taxiId;
+    private int taxi_id;
     private Timestamp date;
     private double latitude;
     private double longitude;
@@ -34,16 +34,16 @@ public class Trajectories {
         return latitude;
     }
 
-    public void setTaxi_id(int taxiId) {
-        this.taxiId = taxiId;
+    public void setTaxi_id(int taxi_idd) {
+        this.taxi_id = taxi_id;
     }
 
     public void setDate(Timestamp date) {
         this.date = date;
     }
 
-    public int getTaxiId() {
-        return taxiId;
+    public int getTaxi_id() {
+        return taxi_id;
     }
 
     public int getId() {
