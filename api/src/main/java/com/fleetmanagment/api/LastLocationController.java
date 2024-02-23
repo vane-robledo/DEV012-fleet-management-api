@@ -17,7 +17,7 @@ public class LastLocationController {
 
 
     @GetMapping("/lastLocation")
-    public List<Object[]> getLastLocation(Pageable pageable){
+    public List<LastLocation> getLastLocation(Pageable pageable){
         return lastLocationService.getLastLocation(pageable);
     }
 }

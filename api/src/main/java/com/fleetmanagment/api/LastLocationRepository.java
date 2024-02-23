@@ -8,11 +8,11 @@ import java.util.List;
 
 @Repository
 public interface LastLocationRepository extends JpaRepository<Trajectories, Integer> {
-        @Query("SELECT DISTINCT t.taxi_id, t.date, t.longitude, t.latitude FROM Trajectories t " +
+        @Query("SELECT DISTINCT NEW com.fleetmanagment.api.LastLocation (t.taxi_id, t.date, t.longitude, t.latitude) FROM Trajectories t " +
                 "WHERE (t.taxi_id, t.date) IN "
         + "(SELECT t2.taxi_id, MAX(t2.date) FROM Trajectories t2 GROUP BY t2.taxi_id)")
 
-        List<Object[]> findLastLocationForAllTaxis(Pageable pageable);
+        List<LastLocation> findLastLocationForAllTaxis(Pageable pageable);
 
 
 }
