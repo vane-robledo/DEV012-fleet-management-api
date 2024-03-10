@@ -1,4 +1,5 @@
 package com.fleetmanagment.api;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,4 +21,5 @@ public class LastLocationController {
     public List<LastLocation> getLastLocation(Pageable pageable){
         return lastLocationService.getLastLocation(pageable);
     }
+
 }

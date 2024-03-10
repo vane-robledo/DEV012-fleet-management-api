@@ -12,10 +12,6 @@ public class TaxiService {
     @Autowired
     private TaxiRepository taxiRepository;
 
-    public TaxiService(TaxiRepository taxiRepository) {
-        this.taxiRepository = taxiRepository;
-    }
-
     public Page<Taxis> getAllTaxis(Pageable pageable) {
         return  taxiRepository.findAll(pageable);
     }
